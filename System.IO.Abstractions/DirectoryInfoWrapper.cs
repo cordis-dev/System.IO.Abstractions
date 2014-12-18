@@ -154,9 +154,9 @@ namespace System.IO.Abstractions
             return instance.GetFileSystemInfos().WrapFileSystemInfos();
         }
 
-        public override FileSystemInfoBase[] GetFileSystemInfos(string searchPattern)
+        public override FileSystemInfoBase[] GetFileSystemInfos(string searchPattern, SearchOption searchOption)
         {
-            return instance.GetFileSystemInfos(searchPattern).WrapFileSystemInfos();
+            return instance.GetFileSystemInfos(searchPattern, searchOption).WrapFileSystemInfos();
         }
 
         public override void MoveTo(string destDirName)

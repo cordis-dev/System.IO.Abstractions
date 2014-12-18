@@ -102,7 +102,7 @@ namespace System.IO.Abstractions.TestingHelpers.Tests
             });
 
             var directoryInfo = new MockDirectoryInfo(fileSystem, XFS.Path(@"c:\temp\folder"));
-            var result = directoryInfo.GetFileSystemInfos("f*");
+            var result = directoryInfo.GetFileSystemInfos("f*", SearchOption.TopDirectoryOnly);
 
             Assert.That(result.Length, Is.EqualTo(2));
         }

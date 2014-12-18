@@ -19,7 +19,7 @@ namespace System.IO.Abstractions
         public abstract FileInfoBase[] GetFiles(string searchPattern);
         public abstract FileInfoBase[] GetFiles(string searchPattern, SearchOption searchOption);
         public abstract FileSystemInfoBase[] GetFileSystemInfos();
-        public abstract FileSystemInfoBase[] GetFileSystemInfos(string searchPattern);
+        public abstract FileSystemInfoBase[] GetFileSystemInfos(string searchPattern, SearchOption searchOption);
         public abstract void MoveTo(string destDirName);
         public abstract void SetAccessControl(DirectorySecurity directorySecurity);
         public abstract DirectoryInfoBase Parent { get; }

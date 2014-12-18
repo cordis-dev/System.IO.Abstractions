@@ -201,15 +201,10 @@ namespace System.IO.Abstractions.TestingHelpers
 
         public override FileSystemInfoBase[] GetFileSystemInfos()
         {
-            return GetFileSystemInfos("*");
+            return GetFileSystemInfos("*", SearchOption.TopDirectoryOnly);
         }
 
-        public override FileSystemInfoBase[] GetFileSystemInfos(string searchPattern)
-        {
-            return GetFileSystemInfos(searchPattern, SearchOption.TopDirectoryOnly);
-        }
-
-        internal FileSystemInfoBase[] GetFileSystemInfos(string searchPattern, SearchOption searchOption)
+        public override FileSystemInfoBase[] GetFileSystemInfos(string searchPattern, SearchOption searchOption)
         {
             return this.GetDirectories(searchPattern, searchOption).OfType<FileSystemInfoBase>().Concat(this.GetFiles(searchPattern, searchOption)).ToArray();
         }
